@@ -15,7 +15,7 @@ const welcomeScreen = ({navigation}) => {
   const [Name, setName] = useState('');
   return (
     <View style={styles.welcomeScreen}>
-      <Image style={styles.logo} source={require('../assets/logo.png')} />
+      <Image style={styles.logo} source={require('../../assets/logo.png')} />
       <Text style={styles.welcomeText}>Welcome To Quiz App</Text>
       <Text style={styles.welcomeText}>Enter your name to Proceed...</Text>
       <TextInput

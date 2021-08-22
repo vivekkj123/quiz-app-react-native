@@ -1,9 +1,8 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import welcomeScreen from './screens/welcomeScreen';
-import quizScreen from './screens/quizScreen';
+import welcomeScreen from './src/screens/welcomeScreen';
+import quizScreen from './src/screens/quizScreen';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -15,10 +14,12 @@ const App = () => {
           component={welcomeScreen}
           options={{headerShown: false}}
         /> */}
+
         <Stack.Screen
           name="QuestionScreen"
           component={quizScreen}
           options={{headerShown: false}}
+          initialParams={{index: 0}}
         />
       </Stack.Navigator>
     </NavigationContainer>
