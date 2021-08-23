@@ -1,44 +1,43 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Questions from '../questions.json';
+import {useStateValue} from '../stateProvider';
 
 const Option = props => {
-  let correctAnswerIdx = Questions.questions[props.qnIndex].correctIndex;
-  const [Optioncolor, setOptioncolor] = useState({borderColor: 'black'});
-  let handleValidation = () => {
-    if (props.optionIdx === correctAnswerIdx) {
-      console.log('Correct Answer');
-      setOptioncolor({borderColor: 'green'});
-
-      setTimeout(() => {
-        if (props.qnIndex + 1 >= Questions.questions.length) {
-          console.log('End of Quiz');
-        } else {
-          props.navigation.navigate('QuestionScreen', {
-            index: props.qnIndex + 1,
-          });
-        }
-        setOptioncolor({borderColor: 'black'});
-      }, 750);
-    } else {
-      console.log('Wrong Answer');
-      setOptioncolor({borderColor: 'red'});
-
-      setTimeout(() => {
-        if (props.qnIndex + 1 >= Questions.questions.length) {
-          console.log('End of Quiz');
-        } else {
-          props.navigation.navigate('QuestionScreen', {
-            index: props.qnIndex + 1,
-          });
-        }
-        setOptioncolor({borderColor: 'black'});
-      }, 1500);
-    }
+  const [{score}, dispatch] = useStateValue();
+  const updateScore = Score => {
+    dispatch({
+      type: 'UPDATE_SCORE',
+      score: Score,
+    });
   };
+  console.log(score);
+  let correctAnswerIdx = Questions.questions[props.qnIndex].correctIndex;
+  // let handleValidation = () => {
+  //   if (props.optionIdx === correctAnswerIdx) {
+  //     console.log('Correct Answer');
+  //     setOptioncolor({borderColor: 'green'});
+  //   } else {
+  //     console.log('Wrong Answer');
+  //     setOptioncolor({borderColor: 'red'});
+  //   }
+  // };
   return (
-    <View style={[styles.Option, Optioncolor]}>
-      <TouchableOpacity onPress={handleValidation}>
+    <View style={[styles.Option, BorderColor]}>
+      <TouchableOpacity
+        onPress={() => {
+          if (props.optionIdx === correctAnswerIdx) {
+            console.log('Correct Answer');
+
+            updateScore(1);
+            // setOptioncolor({borderColor: 'green'});
+          } else {
+            console.log('Wrong Answer');
+            updateScore(0);
+
+            // setOptioncolor({borderColor: 'red'});
+          }
+        }}>
         <Text style={styles.OptionText}>{props.value}</Text>
       </TouchableOpacity>
     </View>
