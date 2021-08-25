@@ -12,6 +12,8 @@ target 'quizApp' do
     :hermes_enabled => false
   )
 
+  pod 'react-native-background-timer', :path => '../node_modules/react-native-background-timer'
+
   target 'quizAppTests' do
     inherit! :complete
     # Pods for testing

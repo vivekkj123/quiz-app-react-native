@@ -11,11 +11,11 @@ const App = () => {
     <StateProvider initialState={initialState} reducer={reducer}>
       <NavigationContainer>
         <Stack.Navigator>
-          {/* <Stack.Screen
-          name="WelcomeScreen"
-          component={welcomeScreen}
-          options={{headerShown: false}}
-        /> */}
+          <Stack.Screen
+            name="WelcomeScreen"
+            component={welcomeScreen}
+            options={{headerShown: false}}
+          />
           <Stack.Screen
             name="QuestionScreen"
             component={quizScreen}

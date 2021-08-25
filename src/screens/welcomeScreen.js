@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, {useState} from 'react';
 import {
   View,
@@ -9,9 +10,10 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Button} from 'react-native-elements';
+import {useStateValue} from '../stateProvider';
 
 const welcomeScreen = ({navigation}) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [{}, dispatch] = useStateValue();
   const [Name, setName] = useState('');
   return (
     <View style={styles.welcomeScreen}>
@@ -35,6 +37,10 @@ const welcomeScreen = ({navigation}) => {
               ToastAndroid.CENTER,
             );
           } else {
+            dispatch({
+              type: 'SET_USER',
+              user: Name,
+            });
             navigation.navigate('QuestionScreen');
           }
         }}
