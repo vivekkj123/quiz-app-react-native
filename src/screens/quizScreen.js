@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Option from '../components/Option';
 import Questions from '../questions.json';
@@ -27,17 +27,12 @@ export default function quizScreen({route, navigation}) {
           key={i}
         />
       ))}
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={styles.nextButton}
         onPress={() => {
-          if (index + 1 >= Questions.questions.length) {
-            console.log('End of Quiz');
-          } else {
-            navigation.navigate('QuestionScreen', {index: index + 1});
-          }
         }}>
         <Text style={styles.nextText}>Next</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 }

@@ -23,19 +23,18 @@ const Option = props => {
   //   }
   // };
   return (
-    <View style={[styles.Option, BorderColor]}>
+    <View style={[styles.Option]}>
       <TouchableOpacity
         onPress={() => {
-          if (props.optionIdx === correctAnswerIdx) {
-            console.log('Correct Answer');
-
-            updateScore(1);
-            // setOptioncolor({borderColor: 'green'});
+          props.optionIdx === correctAnswerIdx
+            ? updateScore(1)
+            : updateScore(0);
+          if (props.qnIndex + 1 >= Questions.questions.length) {
+            console.log('End of Quiz');
           } else {
-            console.log('Wrong Answer');
-            updateScore(0);
-
-            // setOptioncolor({borderColor: 'red'});
+            props.navigation.navigate('QuestionScreen', {
+              index: props.qnIndex + 1,
+            });
           }
         }}>
         <Text style={styles.OptionText}>{props.value}</Text>
