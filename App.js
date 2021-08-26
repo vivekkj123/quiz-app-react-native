@@ -5,6 +5,7 @@ import welcomeScreen from './src/screens/welcomeScreen';
 import quizScreen from './src/screens/quizScreen';
 import {StateProvider} from './src/stateProvider';
 import reducer, {initialState} from './src/reducer';
+import congratScreen from './src/screens/congratScreen';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
@@ -21,6 +22,11 @@ const App = () => {
             component={quizScreen}
             options={{headerShown: false}}
             initialParams={{index: 0}}
+          />
+          <Stack.Screen
+            name="CongratsScreen"
+            component={congratScreen}
+            options={{headerShown: false}}
           />
         </Stack.Navigator>
       </NavigationContainer>

@@ -31,6 +31,7 @@ const Option = props => {
             : updateScore(0);
           if (props.qnIndex + 1 >= Questions.questions.length) {
             console.log('End of Quiz');
+            props.navigation.navigate('CongratsScreen')
           } else {
             props.navigation.navigate('QuestionScreen', {
               index: props.qnIndex + 1,
