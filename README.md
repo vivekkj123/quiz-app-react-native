@@ -4,6 +4,8 @@ Customisable quizApp made in react native
 ## Features ⚛️
 
 - Customisable Questions
+- Leaderboard View
+- Can conduct a small MCQ test for a small group of peoples through this app
 
 ## Screenshots 🖼️
 
@@ -26,20 +28,20 @@ questions:[
 }
 ```
 
-
 ## How to build? 🏗️
 
 https://reactnative.dev/docs/signed-apk-android
 
 ## Contributing/ Future of this project 🧭
 
-Well, this project is one of my side projects. If anyone interested in making it better you're always welcome 🤗
+Well, this project is one of my side projects. If anyone interested in making it better you're always welcome 🤗 Send your suggestions to me :) @IamVivekKJ on telegram
 
 ## Things I learned by doing this project
 
 - Global state management in React native using redux and context
 - Practical example of stack navigator
 - Screen navigation
+- Async Storage
 ## Anything more?
 
 If you liked my work, consider staring the repository and spread the word. ⭐️
