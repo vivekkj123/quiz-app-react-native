@@ -6,6 +6,7 @@ import quizScreen from './src/screens/quizScreen';
 import {StateProvider} from './src/stateProvider';
 import reducer, {initialState} from './src/reducer';
 import congratScreen from './src/screens/congratScreen';
+import LeaderBoardScreen from './src/screens/leaderBoardScreen';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
@@ -26,6 +27,11 @@ const App = () => {
           <Stack.Screen
             name="CongratsScreen"
             component={congratScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="leaderBoardScreen"
+            component={LeaderBoardScreen}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

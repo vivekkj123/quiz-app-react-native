@@ -20,6 +20,7 @@
     "react-native": "0.64.2",
     "react-native-elements": "^3.4.2",
     "react-native-gesture-handler": "^1.10.3",
+    "react-native-leaderboard": "https://github.com/dre2004/react-native-leaderboard",
     "react-native-pie-chart": "^2.0.2",
     "react-native-reanimated": "^2.2.0",
     "react-native-safe-area-context": "^3.3.0",

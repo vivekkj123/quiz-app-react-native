@@ -48,6 +48,13 @@ const CongratScreen = ({navigation}) => {
       />
       <Text style={styles.scoreStyle}>{score}</Text>
       <Divider width={100} />
+      <Button
+        title="View Leaderboard"
+        type="solid"
+        onPress={() => {
+          navigation.navigate('leaderBoardScreen');
+        }}
+      />
       <Text style={styles.congratsText}>Liked it?</Text>
       <Button
         title="Give a ⭐ on github"
