@@ -23,24 +23,22 @@ const Option = props => {
   //   }
   // };
   return (
-    <View style={[styles.Option]}>
-      <TouchableOpacity
-        onPress={() => {
-          props.optionIdx === correctAnswerIdx
-            ? updateScore(1)
-            : updateScore(0);
-          if (props.qnIndex + 1 >= Questions.questions.length) {
-            console.log('End of Quiz');
-            props.navigation.navigate('CongratsScreen')
-          } else {
-            props.navigation.navigate('QuestionScreen', {
-              index: props.qnIndex + 1,
-            });
-          }
-        }}>
+    <TouchableOpacity
+      onPress={() => {
+        props.optionIdx === correctAnswerIdx ? updateScore(1) : updateScore(0);
+        if (props.qnIndex + 1 >= Questions.questions.length) {
+          console.log('End of Quiz');
+          props.navigation.navigate('CongratsScreen');
+        } else {
+          props.navigation.navigate('QuestionScreen', {
+            index: props.qnIndex + 1,
+          });
+        }
+      }}>
+      <View style={[styles.Option]}>
         <Text style={styles.OptionText}>{props.value}</Text>
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
   );
 };
 
