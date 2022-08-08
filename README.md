@@ -8,11 +8,10 @@ Customisable quizApp made in react native
 - Can conduct a small MCQ test for a small group of peoples through this app
 
 ## Screenshots 🖼️
-
-![](doc/screen1.jpg)
-![](doc/screen2.jpg)
-![](doc/screen3.jpg)
-
+<img src='./doc/Screen1.png'>
+<img src='./doc/Screen2.png'>
+<img src='./doc/Screen3.png'>
+<img src='./doc/Screen4.png'>
 
 ## Questions.json ❔
 
